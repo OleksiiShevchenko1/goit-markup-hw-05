@@ -119,6 +119,32 @@ address {
   color: var(--accent-color);
 }
 
+.head-nav-link {
+  position: relative;
+  font-weight: 500;
+  line-height: 1.21;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  display: block;
+  /* padding: 32px 0; */
+
+  transition: color, text-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.head-nav-link.accent-nav:after {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  top: 44px;
+  transform: translateY(1px);
+}
+
 .auth-nav .link {
   color: var(--secondary-text-color);
   font-weight: 500;
@@ -126,6 +152,14 @@ address {
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.head-nav-link:hover,
+.head-nav-link:focus {
+  color: var(--accent-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .site-nav .link:hover,
@@ -133,6 +167,7 @@ address {
 .auth-nav .link:hover,
 .auth-nav .link:focus {
   color: var(--accent-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .auth-nav {
@@ -147,11 +182,14 @@ address {
 .link-icon {
   margin-right: 10px;
   fill: var(--secondary-text-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:focus .link-icon,
 .link:hover .link-icon {
   fill: var(--accent-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* ----------HERO---------- */
@@ -285,6 +323,25 @@ address {
 }
 .work-section {
   padding-bottom: 94px;
+}
+.work-item {
+  position: relative;
+}
+
+.wokr-app {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-background);
 }
 
 /* ----------Team-section---------- */
@@ -511,6 +568,56 @@ address {
   margin: -1px;
 }
 
+/* ----------Modal windows---------- */
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--primary-background);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.backdrop.is-hidden .modal {
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-bnt {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 /* ----------PORTFOLIO.html---------- */
 .portfolio-section {
   padding-top: 94px;
@@ -565,6 +672,7 @@ address {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  text-decoration: none;
 }
 .portfilio-text {
   color: var(--secondary-text-color);
@@ -584,6 +692,36 @@ address {
 .portfolio-item {
   width: 370px;
   margin: 15px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 63px 24px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--primary-background);
+  background-color: rgba(33, 150, 243, 0.9);
+  overflow: hidden;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-portfolio:hover .overlay-text,
+.link-portfolio:focus .overlay-text {
+  transform: translateY(0);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-overlay {
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-card {

@@ -29,26 +29,26 @@
           >
           <ul class="site-nav list">
             <li class="site-nav-item">
-              <a href="./index.html" class="link current">Студія</a>
+              <a class="accent-nav head-nav-link link current"href="./index.html">Студія</a>
             </li>
             <li class="site-nav-item">
-              <a href="./portfolio.html" class="link">Портфоліо</a>
+              <a class="head-nav-link link" href="./portfolio.html">Портфоліо</a>
             </li>
             <li class="site-nav-item">
-              <a href="./index.html" class="link">Контакти</a>
+              <a class="head-nav-link link" href="./index.html">Контакти</a>
             </li>
           </ul>
         </nav>
         <ul class="auth-nav list">
           <li class="auth-nav-item">
-            <a href="mailto:info@devstudio.com" class="link">
+            <a class="link" href="mailto:info@devstudio.com">
               <svg class="link-icon" width="16" height="12">
                <use href=".//images/symbol-defs.svg#icon-tel"></use>
               </svg>
               @devstudio.com</a>
           </li>
           <li class="auth-nav-item">
-            <a href="tel:+380961111111" class="link"> 
+            <a class="link" href="tel:+380961111111"> 
               <svg class="link-icon" width="10" height="16">
                 <use href=".//images/symbol-defs.svg#icon-smartphone"></use>
                </svg>+38 096 111 11 11</a>
@@ -60,7 +60,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="hero-btn">Замовити послугу</button>
+          <button type="button" class="hero-btn" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <section class="benefit">
@@ -126,18 +126,21 @@
                 src="./images/img-1.jpg"
                 width="370"
                 alt="Людина працює за ноутбуком"/>
+              <p class="wokr-app">Десктопні додатки</p>
             </li>
             <li class="work-item">
               <img
                 src="./images/img-2.jpg"
                 width="370"
                 alt="Людина працює за смартфоном"/>
+              <p class="wokr-app">Десктопні додатки</p>  
             </li>
             <li class="work-item">
               <img
                 src="./images/img-3.jpg"
                 width="370"
                 alt="Людина працює за планшетом"/>
+              <p class="wokr-app">Десктопні додатки</p>
             </li>
           </ul>
        </div>
@@ -416,5 +419,15 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden"data-modal>
+      <div class="modal">
+        <button class="modal-close-bnt" type="button" data-modal-close>
+          <svg>
+            <use href="./images/icons-modal.svg#close-black"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
